@@ -1,0 +1,89 @@
+<section>
+    <h3>{{formStatus}} New Post</h3>
+    <p>You can {{formStatus}} new post here</p>
+    <div class="container">
+        <div *ngIf="postForm">
+            <form [formGroup]="postForm"  (ngSubmit)="onSubmit()">
+                <div class="inputs">
+    
+                    <div class="left">
+    
+                        <p>Name :</p>
+                        <input formControlName="name" type="text" >
+                        <p class="w" *ngIf="fc['name'].touched && fc['name'].invalid">This field is required</p>
+                        
+                        <p>Select Category :</p>
+                        <select formControlName="category">
+                            <option>Please Select Category</option>
+                            <option *ngFor="let category of categories" value="{{category.id}}-{{category.data.category}}">{{category.data.category}}</option>
+                        </select>
+                        <p class="w" *ngIf="fc['category'].touched && fc['category'].invalid">This field is required</p>
+                        
+                        <p>Value :</p>
+                        <input formControlName="value" type="number" >
+                        <p class="w" *ngIf="fc['value'].touched && fc['value'].invalid">This field is required</p>
+    
+                        <p>Year :</p>
+                        <input formControlName="yare" type="number" >
+                         <p class="w" *ngIf="fc['yare'].touched && fc['yare'].invalid">This field is required</p>
+    
+                        <p>Mileage :</p>
+                        <input formControlName="mileage" type="number" >
+                        <p class="w" *ngIf="fc['mileage'].touched && fc['mileage'].invalid">This field is required</p>
+    
+                        <p>Fuel :</p>
+                        <input formControlName="fuel" type="text">
+                         <p class="w" *ngIf="fc['fuel'].touched && fc['fuel'].invalid">This field is required</p>
+    
+                        <p>Power :</p>
+                        <input formControlName="power" type="text">
+                         <p class="w" *ngIf="fc['power'].touched && fc['power'].invalid">This field is required</p>
+    
+                        <p>Door Count :</p>
+                        <input formControlName="doorCount" type="text">
+                         <p class="w" *ngIf="fc['doorCount'].touched && fc['doorCount'].invalid">This field is required</p>
+    
+                        <p>Gearbox :</p>
+                        <input formControlName="gearbox" type="text">
+                         <p class="w" *ngIf="fc['gearbox'].touched && fc['gearbox'].invalid">This field is required</p>
+    
+                        <p>Colour :</p>
+                        <input formControlName="color" type="text">
+                         <p class="w" *ngIf="fc['color'].touched && fc['color'].invalid">This field is required</p>
+    
+                        <p>Emission Class :</p>
+                        <input formControlName="emissionClass" type="text">
+                        <p class="w" *ngIf="fc['emissionClass'].touched && fc['emissionClass'].invalid">This field is required</p>
+    
+                    </div>
+
+                    <div class="right">
+                      
+                        <p>Features :</p>
+                        <textarea formControlName="features" name="features"  id="" cols="30" rows="10" ></textarea>
+                        <p class="w" *ngIf="fc['features'].touched && fc['features'].invalid">This field is required</p>
+    
+                        <p>Vehicle description :</p>
+                        <textarea formControlName="description" name="description" id="" cols="30" rows="10"></textarea>
+                        <p class="w" *ngIf="fc['description'].touched && fc['description'].invalid">This field is required</p>
+                        
+
+                        <p>Pictures :</p>
+                        <input formControlName="picture"  type="file" accept="image/*" (change)="showPicture($event)">
+                        <img [src]="imgSrc" alt="">
+                        <p class="w" *ngIf="fc['picture'].touched && fc['picture'].invalid">This field is required</p>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="options">
+                    <button [disabled]="!postForm.valid" type="submit">{{formStatus}} Post  <i class="fa-solid fa-floppy-disk"></i></button>
+                    <button routerLink="/posts">Back <i class="fa-solid fa-backward"></i></button>
+                </div>
+                         
+            </form>
+        </div>
+       
+    </div>
+</section>

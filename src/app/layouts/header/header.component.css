@@ -1,0 +1,66 @@
+nav{
+    height: 12vh;
+    background:rgb(245, 186, 3);
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+nav .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .container h3{
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+nav .container .logout{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: black;
+}
+
+nav .container h3:hover{
+    color:  rgb(32, 32, 32);
+}
+
+nav .container button{
+    padding: 0.5rem 1.5rem;
+    background: white;
+    border-radius: 20px;
+    color:rgb(245, 186, 3);
+    font-size: 1.1rem;
+    border: none;
+    transition: 300ms ease;
+}
+
+nav .container button:hover{
+    transform: scale(1.1);
+    background:  rgb(32, 32, 32);
+    color: white;
+}
+
+
+@media screen and (max-width:550px) {
+    nav{
+        padding: 5rem;
+    }
+    nav .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav .container .logout{
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+}

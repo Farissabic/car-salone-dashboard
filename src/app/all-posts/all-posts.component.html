@@ -1,0 +1,35 @@
+<section>
+    <div class="container">
+        <div class="menu">
+            <h3>All Posts</h3>
+            <p>Form hre you can manage your posts</p>
+            <div class="options">
+                <button routerLink="/posts/new">Add New Post</button>
+                <button routerLink="/">Back to Dashboard</button>
+            </div>
+           
+        </div>
+
+        <div class="posts">
+            <div class="post" *ngFor="let post of posts">
+                <div class="info">
+                    <div class="image">
+                        <img src="{{post.data.picturePath}}" alt="">
+                    </div>
+                    <div class="info-info">
+                        <h4>{{post.data.name}}</h4>
+                        <h4>{{post.data.yare}}</h4>
+                        <h4>{{post.data.fuel}}</h4>
+                        <h4>{{post.data.value}} KM</h4>
+                    </div>
+                </div>
+                <div class="options">
+                    <button routerLink="/posts/new" [queryParams]="{id: post.id}"><i class="fa-solid fa-file-pen"></i></button>
+                    <button (click)="deletePost(post.id,post.data.picturePath)"><i class="fa-solid fa-trash"></i></button>
+                    <button (click)="onFeatured(post.id,true)" *ngIf="!post.data.isFeatured" class="txt" >Mark Featured</button>
+                    <button (click)="onFeatured(post.id,false)" *ngIf="post.data.isFeatured" class="txt r">Remov Featured</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

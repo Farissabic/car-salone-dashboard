@@ -1,0 +1,10 @@
+<nav>
+    <div class="container">
+        <h3 routerLink="/">CS Deashboard <i class="fa-solid fa-car-side"></i></h3>
+        <div class="logout" *ngIf="IsLoggedIn$ | async">
+            <h4>{{user}}</h4>
+            <button (click)="logout()">Log Out</button>
+        </div>
+        
+    </div>
+</nav>

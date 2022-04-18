@@ -1,0 +1,81 @@
+
+section{
+    text-align: center;
+}
+
+section .container form{
+    margin-top: 5rem;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+
+section .container form input,textarea,select,img{
+    padding: 1rem;
+    border: 1px solid #F5BA03;
+    width: 100%;
+}
+
+section .container form input::-webkit-file-upload-button{
+    padding: .5rem 1rem;
+    border: none;
+    background: #F5BA03;
+    color: white;
+    margin-right: 7rem;
+    border-radius: 20px;
+}
+
+section .container form .inputs{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+section .container form .inputs .left,.right{
+    width: 50%;
+}
+
+
+section .container form .options{
+    display: flex;
+    gap: 2rem;
+}
+
+section .container form .options button{
+    background: rgb(32, 32, 32);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    transition: 300ms ease;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+}
+
+section .container form .options button i{
+    font-size: 1.3rem;
+}
+
+section .container form .options button:hover{
+    background: #F5BA03;
+    color: white;
+}
+
+section .container form .options button:disabled{
+    background:rgba(32, 32, 32, 0.438) ;
+    color: gray;
+}
+
+.w{
+    color: red;
+}
+

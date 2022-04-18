@@ -1,0 +1,115 @@
+
+section .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+section .container .add{
+    padding: 2rem;
+    background: #202020;
+    text-align: center;
+    box-shadow: 0 0 2rem gray;
+    width: 100%;
+}
+
+section .container .add h3,p{
+    color: white;
+}
+
+section .container .add form{
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+section .container .add form input{
+    width: 80%;
+    padding: 1rem;
+    border: none;
+    border-radius: 20px;
+}
+
+section .container .add form button{
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid #F5BA03;
+    transition: 300ms ease;
+    color: white;
+}
+
+section .container .add form button:hover{
+    background:#F5BA03 ;
+    color: white;
+}
+
+section .container .add .valid{
+    color: red;
+    text-align: start;
+    padding: 1rem;
+}
+
+section .container .showCategories{
+    margin-top: 5rem;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .container .showCategories p{
+    color: black;
+}
+
+section .container .showCategories table{
+   width: 100%;
+   
+}
+
+section .container .showCategories table {
+    border-bottom: solid 1px black;
+    width: 100%;
+   
+}
+
+section .container .showCategories table tr td{
+   padding-bottom: 1rem;
+}
+
+section .container .showCategories table tr th{
+    text-align: start;
+    padding-bottom: 1rem;
+}
+
+section .container .showCategories table tr td button{
+   margin-right: 1rem;
+   padding: .5rem 2rem;
+   border-radius: 20px;
+   background: black;
+   color: white;
+   transition: 300ms ease;
+   font-size: 1.2rem;
+   cursor: pointer;
+}
+
+section .container .showCategories table tr td button:hover{
+    background:#F5BA03;
+}
+
+
+@media screen and (max-width : 1100px) {
+    section .container .showCategories{
+        width: 100%;
+    }
+
+    section .container .add form{
+        flex-direction: column;
+    }
+
+    section .container .add form input{
+        width: 100%;
+    }
+}

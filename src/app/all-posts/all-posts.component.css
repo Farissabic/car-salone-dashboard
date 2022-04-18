@@ -1,0 +1,130 @@
+
+
+
+section .container .menu{
+    width: 100%;
+    background:  rgb(32, 32, 32);
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 0 0 2rem gray;
+    text-align: center;
+}
+
+
+section .container .menu .options{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+section .container .menu .options button{
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid #F5BA03;
+    color: white;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
+section .container .menu .options button:hover{
+    background: #F5BA03;
+}
+
+section .container .posts{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+section .container .posts .post{
+    display: flex;
+    padding: 1rem;
+    background: #F5BA03 ;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .container .posts .post .info{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+section .container .posts .post .options{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+section .container .posts .post .options button{
+   transition: 300ms ease;
+   cursor: pointer;
+   color: #202020;
+   background: transparent;
+}
+
+section .container .posts .post .options button i{
+    font-size: 2.5rem;
+ }
+
+section .container .posts .post .options .txt{
+     background: #3576b3;
+     padding: 1rem 1.5rem;
+     color: white;
+     border-radius: 20px;
+}
+
+section .container .posts .post .options  .r{
+    background: #202020;;
+}
+
+section .container .posts .post .options button:nth-child(1):hover{
+   color: white;
+ }
+
+section .container .posts .post .options button:nth-child(2):hover{
+    color: rgb(255, 0, 0);
+  }
+section .container .posts .post .image{
+   width: 20rem;
+   height: 10rem;
+   overflow: hidden;
+   border-radius: 20px;
+}
+
+section .container .posts .post .image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 1100px) {
+    section .container .menu .options{
+        display: flex;
+        flex-direction: column;
+    }
+
+    section .container .posts .post{
+       flex-direction: column;
+       gap: 2rem;
+    }
+
+    section .container .posts .post .info{
+        flex-direction: column;
+    }
+
+    section .container .posts .post .image{
+        width: 100%;
+        height: 100%;
+     }
+    
+}

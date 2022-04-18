@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+        <div class="card">
+            <h2>Login</h2>
+            <p>Please login to your admin account</p>
+            <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+                <input  type="email" 
+                        placeholder="Email" 
+                        name="email" 
+                        ngModel
+                        #email="ngModel" 
+                        required
+                        email>
+                <p *ngIf="email.invalid && email.touched">Email Cannot be Empty</p>
+                <input  type="password" 
+                        placeholder="Password" 
+                        name="password" 
+                        ngModel
+                        #password="ngModel" 
+                        required>
+                        <p *ngIf="password.invalid && password.touched">Please enter the password</p>
+                <button type="submit" [disabled]="myForm.invalid">Login</button>
+            </form>
+        </div>
+    </div>
+</section>

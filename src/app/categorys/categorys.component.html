@@ -1,0 +1,42 @@
+<section>
+    <div class="container">
+        <div class="add">
+            <h3>New Categories</h3>
+            <p>You can {{formStatus}} new categories here...</p>
+
+
+            <form #myForm="ngForm" (ngSubmit)="AddCategory(myForm)">
+                <input #category="ngModel"
+                       [(ngModel)]="formCategory"
+                        name="category" 
+                        type="text" 
+                        placeholder="Add New Categories" 
+                        required>
+
+                <button [disabled]="!myForm.valid" 
+                        type="submit">{{formStatus}} Category</button>
+            </form>
+            <p class="valid" *ngIf="category.touched && !myForm.valid">Please enter the category</p>
+        </div>
+
+        <div class="showCategories">
+            <table>
+                <tr>
+                  <th>No.</th>
+                  <th>Category</th>
+                  <th>Action</th>
+                </tr>
+
+                <tr *ngFor="let category of categories; let i = index">
+                  <td>{{i+1}}.</td>
+                  <td>{{category.data.category}}</td>
+                  <td>
+                      <button (click)="EditCategory(category.data.category, category.id)"><i class="fa-solid fa-pen-to-square"></i></button>
+                      <button (click)="DeleteCategory(category.id)"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+               
+            </table>
+        </div>
+    </div>
+</section>
